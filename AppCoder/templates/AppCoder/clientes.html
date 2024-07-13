@@ -1,0 +1,31 @@
+{% extends "AppCoder/index.html" %}
+
+{% block titulo %}
+<h1 class="mb-5">Clientes</h1>                              
+{% endblock titulo %}
+
+{% block contenido %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Identificacion</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in cliente  %}
+        <tr>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.apellido }}</td>
+            <td>{{ c.identificacion }}</td>
+            <td>{{ c.email }}</td>
+            <td>{{ c.telefono }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

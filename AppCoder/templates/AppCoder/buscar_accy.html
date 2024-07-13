@@ -1,0 +1,15 @@
+{% extends "AppCoder/index.html" %}
+
+{% block titulo %}
+<h1 class="mb-5">Buscar Accesorios</h1>                                
+{% endblock titulo %}
+
+{% block contenido %}
+<form action="{% url 'encontrarAccesorios' %}" method="get">
+    {% csrf_token %}
+    <table>
+        <p>Ingrese tipo de accesorio: <input type="text" name="buscar" id="buscar"></p>
+    </table>
+    <input type="submit" value="Buscar">
+</form>
+{% endblock contenido %}

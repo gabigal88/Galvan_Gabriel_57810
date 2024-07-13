@@ -1,0 +1,16 @@
+{% if rentalForm.errors %}
+<p style="color: red;"> Datos incorrectos</p>
+{% endif %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+    <table>
+        {{rentalForm.as_table}}
+    </table>
+
+        <input type="submit" value ="Guardar"></p>
+</form>
+    
+<!--/body>
+</html>
+

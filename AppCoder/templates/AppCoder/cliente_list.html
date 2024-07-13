@@ -1,0 +1,58 @@
+{% extends "AppCoder/index.html" %}
+
+{% block titulo %}
+<h1 class="mb-5">Clientes</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<table>
+    <tr>
+        <td width="100"><h2>Clientes</h2></td>
+        <td>
+            <a
+            href="{% url 'clienteCreate' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-sm" title="Registrar"> </i>
+            </a>
+        </td>        
+    </tr>
+</table>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Identificacion</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th class="text-center">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in cliente_list  %}
+        <tr>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.apellido }}</td>
+            <td>{{ c.identificacion }}</td>
+            <td>{{ c.email }}</td>
+            <td>{{ c.telefono }}</td>
+            <td class="text-center">
+                <a
+                  href="{% url 'clienteUpdate' c.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                 href="{% url 'clienteDelete' c.id %}"
+                 class="btn btn-danger"
+                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .25rem; --bs-btn-font-size: .5rem;"
+                 ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

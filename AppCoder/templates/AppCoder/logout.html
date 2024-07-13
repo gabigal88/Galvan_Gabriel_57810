@@ -1,0 +1,13 @@
+{% extends "AppCoder/index.html" %}
+
+
+{% block titulo %}
+<h2 class="mb-5">👋🏻</h2>                     
+{% endblock titulo %}
+
+{% block contenido %}
+{% csrf_token %}
+<h2>Desconexion exitosa!</h2>
+<h2>Gracias por usar esta App, esperamos tenerlo nuevamente con nosotros</h2>
+<a href="{% url 'login' %}">Click aqui para acceder nuevamente</a>
+{% endblock contenido %}

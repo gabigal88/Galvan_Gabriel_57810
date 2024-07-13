@@ -1,0 +1,59 @@
+{% extends "AppCoder/index.html" %}
+
+{% block titulo %}
+<h1 class="mb-5">Bicicletas</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<table>
+    <tr>
+        <td width="100"><h2>Bicicletas</h2></td>
+        <td>
+            <a
+            href="{% url 'bicicletaCreate' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-sm" title="Registrar"> </i>
+            </a>
+        </td>        
+    </tr>
+</table>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Serie</th>
+            <th>Supension</th>
+            <th>Foto</th>
+            <th class="text-center">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for b in bicicleta_list  %}
+        <tr>
+            <td>{{ b.marca }}</td>
+            <td>{{ b.modelo }}</td>
+            <td>{{ b.serie }}</td>
+            <td>{{ b.suspension }}</td>
+            <td>{{ b.foto }}</td>
+
+            <td class="text-center">
+                <a
+                  href="{% url 'bicicletaUpdate' b.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                 href="{% url 'bicicletaDelete' b.id %}"
+                 class="btn btn-danger"
+                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .25rem; --bs-btn-font-size: .5rem;"
+                 ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

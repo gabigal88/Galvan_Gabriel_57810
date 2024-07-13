@@ -1,0 +1,28 @@
+{% extends "AppCoder/index.html" %}
+
+{% block titulo %}
+<h1 class="mb-5">Bicicletas</h1>                                
+{% endblock titulo %}
+
+{% block contenido %}   
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Serie</th>
+            <th>Suspension</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for b in bicicleta  %}
+        <tr>
+            <td>{{ b.marca }}</td>
+            <td>{{ b.modelo }}</td>
+            <td>{{ b.serie }}</td>
+            <td>{{ b.suspension }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

@@ -1,0 +1,52 @@
+{% extends "AppCoder/index.html" %}
+
+{% block titulo %}
+<h1 class="mb-5">Accesorios</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<table>
+    <tr>
+        <td width="100"><h2>Accesorios</h2></td>
+        <td>
+            <a
+            href="{% url 'accesoriosCreate' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-sm" title="Registrar"> </i>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Tipo</th>
+            <th class="text-center">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for a in accesorios_list  %}
+        <tr>
+            <td>{{ a.marca }}</td>
+            <td>{{ a.tipo }}</td>
+            <td class="text-center">
+                <a
+                  href="{% url 'accesoriosUpdate' a.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .25rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Editar"></i>
+                </a>
+                <a
+                 href="{% url 'accesoriosDelete' a.id %}"
+                 class="btn btn-danger"
+                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .25rem; --bs-btn-font-size: .75rem;"
+                 ><i class="fa fa-trash fa-sm" title="Eliminar"></i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

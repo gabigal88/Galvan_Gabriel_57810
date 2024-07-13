@@ -1,0 +1,24 @@
+{% extends "AppCoder/index.html" %}
+
+{% block titulo %}
+<h1 class="mb-5">Accesorios</h1>                                
+{% endblock titulo %}
+
+{% block contenido %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Marca</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for a in accesorio  %}
+        <tr>
+            <td>{{ a.tipo }}</td>
+            <td>{{ a.marca }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
