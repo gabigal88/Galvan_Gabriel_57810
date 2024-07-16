@@ -1,7 +1,7 @@
-{% extends "AppCoder/index.html" %}
+{% extends "AppCoder/indexClientes.html" %}
 
 {% block titulo %}
-<h1 class="mb-5">Clientes</h1>
+<h1 class="container">Clientes</h1>
 {% endblock titulo %}
 
 {% block contenido %}
@@ -13,6 +13,11 @@
             href="{% url 'clienteCreate' %}"
             class="btn btn-primary btn-sm"
             ><i class="fa fa-plus fa-sm" title="Registrar"> </i>
+            </a>
+            <a
+            href="{% url 'buscarClientes' %}"
+            class="btn btn-succes btn-sm"
+            ><i class="fa fa-search fa-sm" title="Buscar"> </i>
             </a>
         </td>        
     </tr>

@@ -11,7 +11,7 @@
 <form action="{% url 'encontrarClientes' %}" method="get">
     {% csrf_token %}
     <table>
-        <p>Ingrese busqueda: <input type="text" name="buscar" id="buscar"></p>
+        <p>Ingrese nombre: <input type="text" name="buscar" id="buscar"></p>
     </table>
     <input type="submit" value="Buscar">
 </form>

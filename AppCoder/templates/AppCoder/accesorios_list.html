@@ -14,6 +14,11 @@
             class="btn btn-primary btn-sm"
             ><i class="fa fa-plus fa-sm" title="Registrar"> </i>
             </a>
+            <a
+            href="{% url 'buscarAccesorios' %}"
+            class="btn btn-succes btn-sm"
+            ><i class="fa fa-search fa-sm" title="Buscar"> </i>
+            </a>
         </td>
     </tr>
 </table>
@@ -21,16 +26,16 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Marca</th>
             <th>Tipo</th>
+            <th>Marca</th>
             <th class="text-center">Opciones</th>
         </tr>
     </thead>
     <tbody>
     {% for a in accesorios_list  %}
         <tr>
-            <td>{{ a.marca }}</td>
             <td>{{ a.tipo }}</td>
+            <td>{{ a.marca }}</td>
             <td class="text-center">
                 <a
                   href="{% url 'accesoriosUpdate' a.id %}"

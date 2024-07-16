@@ -93,12 +93,12 @@ class BicicletaList(LoginRequiredMixin,ListView):
 
 class BicicletaCreate(LoginRequiredMixin, CreateView):
     model = Bicicleta
-    fields = ["marca", "modelo", "serie", "suspension","foto"]
+    fields = ["marca", "modelo", "serie", "suspension","imagen"]
     success_url = reverse_lazy("bicicletas")
 
 class BicicletaUpdate(LoginRequiredMixin, UpdateView):
     model = Bicicleta
-    fields = ["marca", "modelo", "serie", "suspension","foto"]
+    fields = ["marca", "modelo", "serie", "suspension","imagen"]
     success_url = reverse_lazy("bicicletas")
 
 class BicicletaDelete(LoginRequiredMixin, DeleteView):

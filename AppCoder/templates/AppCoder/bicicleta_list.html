@@ -1,4 +1,4 @@
-{% extends "AppCoder/index.html" %}
+{% extends "AppCoder/indexBicicletas.html" %}
 
 {% block titulo %}
 <h1 class="mb-5">Bicicletas</h1>
@@ -14,6 +14,11 @@
             class="btn btn-primary btn-sm"
             ><i class="fa fa-plus fa-sm" title="Registrar"> </i>
             </a>
+            <a
+            href="{% url 'buscarBicicletas' %}"
+            class="btn btn-succes btn-sm"
+            ><i class="fa fa-search fa-sm" title="Buscar"> </i>
+            </a>
         </td>        
     </tr>
 </table>
@@ -25,7 +30,7 @@
             <th>Modelo</th>
             <th>Serie</th>
             <th>Supension</th>
-            <th class="text-center">Foto</th>
+            <th class="text-center">Imagen</th>
             <th class="text-center">Opciones</th>
         </tr>
     </thead>
@@ -36,8 +41,8 @@
             <td>{{ b.modelo }}</td>
             <td>{{ b.serie }}</td>
             <td>{{ b.suspension }}</td>
-            <td class="image text-center">{{ b.foto }}</td><i class="image"></i>
-
+            <td>{{ b.imagen }}</td>
+   
             <td class="text-center">
                 <a
                   href="{% url 'bicicletaUpdate' b.id %}"

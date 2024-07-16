@@ -17,7 +17,7 @@ class BicicletaFormulario(forms.Form):
     modelo=forms.CharField()
     serie=forms.CharField()
     suspension=forms.CharField()
-    foto=forms.ImageField(required=True)
+    imagen=forms.ImageField(required=True)
 
 class AccesoriosFormulario(forms.Form):
 

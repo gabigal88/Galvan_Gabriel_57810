@@ -19,9 +19,9 @@ class Bicicleta(models.Model):
     modelo=models.CharField(max_length=20)
     serie=models.CharField(max_length=20)
     suspension=models.CharField(max_length=20)
-    foto=models.ImageField(upload_to='bicicletas')
+    imagen=models.ImageField(verbose_name="Imagen", upload_to='bicicletas')
     def __str__(self):
-        return f'{self.marca},{self.modelo},{self.serie},{self.suspension},{self.foto}'
+        return f'{self.marca},{self.modelo},{self.serie},{self.suspension},{self.imagen}'
 
 class Accesorios(models.Model):
     tipo=models.CharField(max_length=20)
