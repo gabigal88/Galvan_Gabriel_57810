@@ -24,6 +24,8 @@ def acerca(request):
     return render(request, "AppCoder/acerca.html")
 
 #____Circuitos
+
+@login_required
 def circuitos(request):
     contexto={"circuitos":Circuito.objects.all()}
     return render(request, "AppCoder/circuitos.html",contexto)
@@ -59,12 +61,12 @@ class ClienteList(LoginRequiredMixin,ListView):
 
 class ClienteCreate(LoginRequiredMixin, CreateView):
     model = Cliente
-    fields = ["nombre","apellido","identificacion","email","telefono"]
+    fields = ["nombre","apellido","identificacion","email","telefono","fecha","bicicleta","accesorios"]
     success_url = reverse_lazy("clientes")
 
 class ClienteUpdate(LoginRequiredMixin, UpdateView):
     model = Cliente
-    fields = ["nombre", "apellido", "identificacion", "email", "telefono"]
+    fields = ["nombre","apellido","identificacion","email","telefono","fecha","bicicleta","accesorios"]
     success_url = reverse_lazy("clientes")
 
 class ClienteDelete(LoginRequiredMixin, DeleteView):
@@ -105,9 +107,11 @@ class BicicletaDelete(LoginRequiredMixin, DeleteView):
     model = Bicicleta
     success_url = reverse_lazy("bicicletas")
 
+@login_required
 def buscarBicicletas(request):
     return render(request,"AppCoder/buscar_bicicleta.html") #ok
 
+@login_required
 def encontrarBicicletas(request):
     if request.GET['buscar']:
         patron = request.GET['buscar']
@@ -137,9 +141,11 @@ class AccesoriosDelete(LoginRequiredMixin, DeleteView):
     model = Accesorios
     success_url = reverse_lazy("accesorios")
 
+@login_required
 def buscarAccesorios(request):
     return render(request,"AppCoder/buscar_accy.html") #ok
 
+@login_required
 def encontrarAccesorios(request):
     if request.GET['buscar']:
         patron = request.GET['buscar']
@@ -213,7 +219,7 @@ class CambiarClave(LoginRequiredMixin, PasswordChangeView):
 
 #__agregar avatar
 
-
+@login_required
 def agregarAvatar(request):
     usuario = request.user
     if request.method == "POST":

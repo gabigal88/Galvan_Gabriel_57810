@@ -30,7 +30,10 @@
             <th>Apellido</th>
             <th>Identificacion</th>
             <th>Email</th>
-            <th>Telefono</th>
+            <th class="text-center">Telefono</th>
+            <th class="text-center">Reserva</th>
+            <th>Bicicleta</th>
+            <th>Accesorios</th>
             <th class="text-center">Opciones</th>
         </tr>
     </thead>
@@ -41,7 +44,10 @@
             <td>{{ c.apellido }}</td>
             <td>{{ c.identificacion }}</td>
             <td>{{ c.email }}</td>
-            <td>{{ c.telefono }}</td>
+            <td class="text-center">{{ c.telefono }}</td>
+            <td class="text-center">{{ c.fecha }}</td>
+            <td>{{ c.bicicleta }}</td>
+            <td>{{ c.accesorios }}</td>
             <td class="text-center">
                 <a
                   href="{% url 'clienteUpdate' c.id %}"

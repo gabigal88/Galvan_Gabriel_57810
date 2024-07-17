@@ -7,12 +7,15 @@ class Cliente(models.Model):
     identificacion=models.IntegerField()
     email=models.EmailField()
     telefono=models.IntegerField()
+    fecha=models.DateField()
+    bicicleta=models.CharField(max_length=40)
+    accesorios=models.CharField(max_length=40)
 
     #class Meta:
         #ordering=["identificacion"]
     
     def __str__(self):
-        return f'{self.nombre},{self.apellido},{self.identificacion},{self.email},{self.telefono}'
+        return f'{self.nombre},{self.apellido},{self.identificacion},{self.email},{self.telefono},{self.fecha},{self.bicicleta},{self.accesorios}'
 
 class Bicicleta(models.Model):
     marca=models.CharField(max_length=20)

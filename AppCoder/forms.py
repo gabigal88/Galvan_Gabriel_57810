@@ -10,6 +10,9 @@ class ClienteFormulario(forms.Form):
     identificacion=forms.IntegerField(required=True)
     email=forms.EmailField(required=True)
     telefono=forms.IntegerField(required=True)
+    fecha=forms.DateField(required=True)
+    bicicleta=forms.CharField(max_length=40,required=True)
+    accesorios=forms.CharField(max_length=40,required=True)
 
 class BicicletaFormulario(forms.Form):
 
@@ -27,7 +30,7 @@ class AccesoriosFormulario(forms.Form):
 class RentalFormulario(forms.Form):
 
     equipos=forms.CharField()
-    cant_dias=forms.CharField()
+    cant_dias=forms.IntegerField()
     valor=forms.IntegerField()
 
 class RegistroForm(UserCreationForm):
