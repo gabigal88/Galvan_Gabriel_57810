@@ -11,7 +11,8 @@ class ClienteFormulario(forms.Form):
     email=forms.EmailField(required=True)
     telefono=forms.IntegerField(required=True)
     fecha=forms.DateField(required=True)
-    bicicleta=forms.CharField(max_length=40,required=True)
+    marca=forms.CharField(max_length=40,required=True)
+    modelo=forms.CharField(max_length=40,required=True)
     accesorios=forms.CharField(max_length=40,required=True)
 
 class BicicletaFormulario(forms.Form):

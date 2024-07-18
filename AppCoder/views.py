@@ -61,12 +61,12 @@ class ClienteList(LoginRequiredMixin,ListView):
 
 class ClienteCreate(LoginRequiredMixin, CreateView):
     model = Cliente
-    fields = ["nombre","apellido","identificacion","email","telefono","fecha","bicicleta","accesorios"]
+    fields = ["nombre","apellido","identificacion","email","telefono","fecha","marca","modelo","accesorios"]
     success_url = reverse_lazy("clientes")
 
 class ClienteUpdate(LoginRequiredMixin, UpdateView):
     model = Cliente
-    fields = ["nombre","apellido","identificacion","email","telefono","fecha","bicicleta","accesorios"]
+    fields = ["nombre","apellido","identificacion","email","telefono","fecha","marca","modelo","accesorios"]
     success_url = reverse_lazy("clientes")
 
 class ClienteDelete(LoginRequiredMixin, DeleteView):

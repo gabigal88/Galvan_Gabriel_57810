@@ -30,7 +30,6 @@
             <th>Modelo</th>
             <th>Serie</th>
             <th>Supension</th>
-            <th class="text-center">Imagen</th>
             <th class="text-center">Opciones</th>
         </tr>
     </thead>
@@ -41,8 +40,7 @@
             <td>{{ b.modelo }}</td>
             <td>{{ b.serie }}</td>
             <td>{{ b.suspension }}</td>
-            <td class="text-center">{{ b.imagen }}</td>
-   
+            
             <td class="text-center">
                 <a
                   href="{% url 'bicicletaUpdate' b.id %}"
