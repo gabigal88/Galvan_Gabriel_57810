@@ -61,12 +61,12 @@ class ClienteList(LoginRequiredMixin,ListView):
 
 class ClienteCreate(LoginRequiredMixin, CreateView):
     model = Cliente
-    fields = ["nombre","apellido","identificacion","email","telefono","fecha","marca","modelo","accesorios"]
+    fields = ["nombre","apellido","identificacion","email","telefono","fecha","marca","modelo","accesorios","status"]
     success_url = reverse_lazy("clientes")
 
 class ClienteUpdate(LoginRequiredMixin, UpdateView):
     model = Cliente
-    fields = ["nombre","apellido","identificacion","email","telefono","fecha","marca","modelo","accesorios"]
+    fields = ["nombre","apellido","identificacion","email","telefono","fecha","marca","modelo","accesorios","status"]
     success_url = reverse_lazy("clientes")
 
 class ClienteDelete(LoginRequiredMixin, DeleteView):
@@ -214,8 +214,8 @@ def editProfile(request):
     return render(request, "AppCoder/editarPerfil.html", {"form": miForm})
 
 class CambiarClave(LoginRequiredMixin, PasswordChangeView):
-    template_name = "AppCoder/cambiar_clave.html"
-    success_url = reverse_lazy("home")
+    template_name = "AppCoder/password.html"
+    success_url = reverse_lazy("login")
 
 #__agregar avatar
 

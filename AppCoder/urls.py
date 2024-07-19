@@ -48,7 +48,8 @@ urlpatterns = [
 
     #__Edicion de perfil / Avatar
     path('editarPerfil/', editProfile, name="editarPerfil"),
-    path('cambiar_clave/<int:pk>/password/', CambiarClave.as_view(), name="cambiarClave"),
-    #path('<int:pk>/password/', CambiarClave.as_view(), name="cambiarClave"),
     path('agregar_avatar/', agregarAvatar, name="agregar_avatar"),
+
+    #___Cambiar Clave
+    path('password', CambiarClave.as_view(), name="password"),
 ]

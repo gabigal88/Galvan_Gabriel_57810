@@ -11,12 +11,13 @@ class Cliente(models.Model):
     marca=models.CharField(max_length=40)
     modelo=models.CharField(max_length=40)
     accesorios=models.CharField(max_length=40)
+    status=models.CharField(max_length=10)
 
     class Meta:
         ordering=["fecha"]
     
     def __str__(self):
-        return f'{self.nombre},{self.apellido},{self.identificacion},{self.email},{self.telefono},{self.fecha},{self.marca},{self.modelo},{self.accesorios}'
+        return f'{self.nombre},{self.apellido},{self.identificacion},{self.email},{self.telefono},{self.fecha},{self.marca},{self.modelo},{self.accesorios},{self.status}'
 
 class Bicicleta(models.Model):
     marca=models.CharField(max_length=20)

@@ -35,6 +35,7 @@
             <th>Bicicleta</th>
             <th>Modelo</th>
             <th>Accesorios</th>
+            <th>Status</th>
             <th class="text-center">Opciones</th>
         </tr>
     </thead>
@@ -50,6 +51,7 @@
             <td>{{ c.marca }}</td>
             <td>{{ c.modelo }}</td>
             <td>{{ c.accesorios }}</td>
+            <td>{{ c.status }}
             <td class="text-center">
                 <a
                   href="{% url 'clienteUpdate' c.id %}"

@@ -14,6 +14,7 @@ class ClienteFormulario(forms.Form):
     marca=forms.CharField(max_length=40,required=True)
     modelo=forms.CharField(max_length=40,required=True)
     accesorios=forms.CharField(max_length=40,required=True)
+    status=forms.CharField(max_length=10,required=True)
 
 class BicicletaFormulario(forms.Form):
 
