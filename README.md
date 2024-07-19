@@ -4,7 +4,7 @@
 Hola mundo!!!
 Primero que nada, comentarles que esta pagina esta orientada a ser utilizada para un rental de bicicletas en la ciudad Ushuaia y a lo largo de este video https://www.youtube.com/watch?v=kkXllAM9WU4 se puede observar la navegabilidad y funcionalidades que tiene la misma, aunque se recomienda cargar el proyecto y ver las ultimas mejoras realizadas, sobre todo en lo que respecta a estetica y alienacion de textos,titulos, etc.
 
-Se puede acceder con los isguinetse usarios y contraseñas
+Se puede acceder con los siguintes usuarios y contraseñas
 
     Superuser
     💥 User: gabriel
